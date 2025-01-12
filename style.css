@@ -1383,10 +1383,7 @@ header.blog-header {
 
 }
 
-@media (max-height: 400px) {
-    .menu-link {
-        font-size: 1.5rem;
-    }
+
 
     .header {
         height: 100vh;
