@@ -658,7 +658,7 @@ header.blog-header {
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    padding-bottom: 60%;
+    padding-bottom: 5%;
 }
 
 .sidelogo-wrapper img {
@@ -670,7 +670,7 @@ header.blog-header {
 
 .menu {
     position: absolute;
-    top: 51%;
+    top: 55%;
     left: 50%;
     bottom: 25%;
     transform: translate(-50%, -50%);
@@ -865,7 +865,7 @@ header.blog-header {
     display: flex;
     box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
     animation: moveBannerTop 1.5s 0s forwards;
-    
+
 }
 
 .contact-left {
@@ -1292,7 +1292,26 @@ header.blog-header {
 
 }
 
+@media (max-height: 800px) {
+    .menu {
+        top: 52%;
+    }
+}
+
+@media (max-height: 700px) {
+    .menu {
+        top: 52%;
+    }
+
+    .menu-item {
+        margin-bottom: .1rem;
+    }
+}
+
+
 @media (max-width: 740px) {
+
+
 
     .left-content {
         padding: 1rem;
