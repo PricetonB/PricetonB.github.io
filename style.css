@@ -1124,7 +1124,7 @@ header.blog-header {
     }
 
     .menu-link {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .service:nth-child(1) {
@@ -1381,6 +1381,16 @@ header.blog-header {
         grid-template-columns: repeat(1, 1fr);
     }
 
+}
+
+@media (max-height: 400px) {
+    .menu-link {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        height: 100vh;
+    }
 }
 
 @media (max-width: 360px) {
