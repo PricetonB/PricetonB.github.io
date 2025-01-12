@@ -11,113 +11,72 @@ html {
     font-size: 62.5%;
 }
 
-.hamburger-menu {
-    width: 3rem;
-    height: 3rem;
-    position: fixed;
-    top: 6rem;
-    right: 5rem;
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    cursor: pointer;
-    transition: 0.7s;
-}
 
-.change .hamburger-menu {
-    right: 30rem;
-}
 
-.line {
+
+
+/*-------------------------------------------------*/
+/* Nav Styles */
+
+
+
+.nav-bar {
     width: 100%;
-    height: 0.2rem;
-    background-color: #fff;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+    height: 50%;
+    padding: 5rem;
+    background-color: rgb(226, 200, 30);
 }
 
-.change .line {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.change .line-1 {
-    transform: rotate(45deg) translate(0.3rem, 0.8rem);
-}
-
-.change .line-2 {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.change .line-3 {
-    transform: rotate(-45deg) translate(0.3rem, -0.8rem);
-}
-
-.hamburger-menu span {
-    position: absolute;
-    left: 5rem;
-    width: 10rem;
-    height: 4rem;
-    background-color: aquamarine;
+.nav-bar nav ul {
+    list-style: none;
+    /* Removes bullets */
     display: flex;
+    /* Displays list items horizontally */
+    gap: 20px;
+    /* Adds space between list items */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
     justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: "Baloo Da 2", serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.1;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.7s;
+    /* Centers the items horizontally */
 }
 
-.change .hamburger-menu:hover span {
-    opacity: 1;
-    visibility: visible;
+
+/* Styling for each link in the navigation */
+.nav-bar nav ul li a {
+    text-decoration: none;
+    /* Removes underline */
+    color: #ffffff;
+    /* Sets text color */
+    font-weight: bold;
+    /* Makes text bold */
+    padding: 10px 10px;
+    /* Adds padding for clickable area */
+    transition: color 0.3s ease;
+    /* Smooth color change on hover */
+    font-size: 3.5rem;
 }
 
-.hamburger-menu span::before {
-    content: "";
-    position: absolute;
-    border-left: 1rem solid transparent;
-    border-right: 1rem solid aquamarine;
-    border-bottom: 1rem solid transparent;
-    border-top: 1rem solid transparent;
-    top: 50%;
-    left: -2rem;
-    transform: translateY(-50%);
+/* Hover effect for links */
+.nav-bar nav ul li a:hover {
+    color: #5d5d5d;
+    /* Changes color when hovered */
 }
 
-.header {
-    width: 100%;
-    height: 100vh;
-    perspective: 100rem;
-    overflow: hidden;
+.nav-bar nav ul li:first-child a {
+    font-family: "Lucida Handwriting", cursive;
+    color: #8c7544;
+    /* Changes the font color to red */
+    transition: font-size 0.3s ease, color 0.3s ease;
+    /* Smooth hover effects */
 }
 
-.top {
-    width: 100%;
-    padding: 0rem;
-    background-color: rgb(66, 109, 191);
+.nav-bar nav ul li:first-child a:hover {
+    font-size: 3.7rem;
+    color: #8c7544;
 }
 
-.one {
-    position: relative;
-    display: inline;
-    margin-left: 5%;
-    margin-right: 10%;
-    color: white;
-    font-size: 2.5rem;
-    font-family: "Baloo Da 2", serif;
-}
-
-.two {
-    display: inline;
-    margin-left: 5%;
-    color: white;
-    font-size: 2.5rem;
-    font-family: "Baloo Da 2", serif;
-}
 
 .img-wrapper {
     width: 100%;
@@ -144,28 +103,293 @@ html {
     }
 }
 
+
+.header {
+    width: 100%;
+    height: 120vh;
+    perspective: 100rem;
+    overflow: hidden;
+}
+
+
+
+/*-----------------------------------------------*/
+/* Blog Styles */
+
+
+.blogs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.blog-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 80%;
+    margin-bottom: 17%;
+
+}
+
+.blog-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.blog-box-img-wrapper {
+    height: 60%;
+    overflow: hidden;
+}
+
+.blog-box-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.blog-box-title-wrapper {
+    padding: 1rem;
+    text-align: center;
+    height: 40%;
+    margin-top: 5%;
+}
+
+.blog-box-title-wrapper a {
+    font-size: 3rem;
+    color: #4a4a4a;
+    transition: color 0.3s;
+    font-family: 'Mulish', sans-serif;
+}
+
+.blog-box-title-wrapper a:hover {
+    color: #333;
+}
+
+
+header.blog-header {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+
+#blog-content {
+    margin: 20px;
+    margin-bottom: 50px;
+
+}
+
+#blog-content h2 {
+    font-size: 3rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+#blog-content p {
+    font-size: 2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+
+
+
+
+/*-----------------------------------------------*/
+/* About Section Styles */
+.about {
+    background-color: #face4557;
+    padding: 3rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    color: #090909;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 2.5rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 80%;
+}
+
+.author-photo {
+    width: 60%;
+    height: 60%;
+    box-shadow: #1f1f1f;
+
+
+}
+
+.about-content img {
+    margin-top: 1.5rem;
+}
+
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* Reviews Section Styles */
+.reviews {
+    width: 100%;
+    height: 70vh;
+    perspective: 100rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    /* Spaces out the reviews evenly */
+    align-items: center;
+    /* Centers the reviews vertically */
+    padding: 2rem;
+    background-color: #f4f4f4;
+    /* Light background for better contrast */
+}
+
+.review {
+    background-color: #fff;
+    width: 30%;
+    /* Adjust the width for each review */
+    height: 50%;
+    /* Adjusted height to fill space */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth hover effect */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    /* Slight hover lift effect */
+}
+
+.review-content {
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    /* Adjusted font size */
+    color: #555;
+    text-align: left;
+    /* Center the text */
+    margin-bottom: 1rem;
+    /* Space between the content and customer name */
+}
+
+.review-rating {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    /* Adjusted font size */
+    color: #f39c12;
+    /* Golden color for rating */
+    text-align: left;
+    /* Center the rating */
+}
+
+.review-rating p {
+    margin: 0;
+}
+
+.customer-name {
+    margin-top: 1rem;
+    font-size: 3rem;
+    /* Adjusted font size */
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    /* Center the name */
+}
+
+
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* home page banner Styles */
 .banner {
     position: absolute;
-    top: 30%;
+    display: flex;
+    top: 10%;
     left: 15%;
 }
 
-.banner h1 {
+.left-content {
+    width: 50%;
+    /* Space for the text on the left side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.right-content {
+    width: 50%;
+    /* Space for the image on the right side */
+}
+
+.left-content h1 {
     font-family: "Baloo Da 2", serif;
-    font-size: 10rem;
+    font-size: 5rem;
     font-weight: 300;
     color: #fff;
-    width: 50%;
-    line-height: 9rem;
+    width: 100%;
+    line-height: 5rem;
     letter-spacing: 0.2rem;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
     opacity: 0;
     animation: moveBanner 1s 0.5s forwards;
+    margin-bottom: 3rem;
 }
 
-.banner p {
+.left-content p {
     font-family: "Josefin Slab", serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: #fff;
     width: 70%;
     letter-spacing: 0.1rem;
@@ -175,10 +399,10 @@ html {
     animation: moveBanner 1s 0.7s forwards;
 }
 
-.banner button {
+.left-content button {
     width: 25rem;
     height: 7rem;
-    background-color: rgb(66, 109, 191);
+    background-color: rgb(226, 200, 30);
     border: none;
     font-family: "Mulish", serif;
     font-size: 2rem;
@@ -191,6 +415,93 @@ html {
     animation: moveBanner 1s 0.9s forwards;
 }
 
+
+.right-content img {
+    width: 75%;
+    /* Make the image take up the available space */
+    height: auto;
+    /* Maintain aspect ratio */
+    cursor: pointer;
+    /* Makes the image clickable */
+    animation: moveBanner 1s 0s forwards;
+}
+
+
+
+
+
+/****************************************************/
+/* coming soon banner Styles */
+
+.soon-left-content {
+    width: 50%;
+    /* Space for the text on the left side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.soon-right-content {
+    width: 50%;
+    /* Space for the image on the right side */
+}
+
+.soon-left-content h1 {
+    font-family: "Baloo Da 2", serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #fff;
+    width: 100%;
+    line-height: 5rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: moveBannerLeft 1s 0.5s forwards;
+    margin-bottom: 3rem;
+}
+
+.soon-left-content p {
+    font-family: "Josefin Slab", serif;
+    font-size: 3rem;
+    color: #fff;
+    width: 70%;
+    letter-spacing: 0.1rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: moveBannerLeft 1s 0.7s forwards;
+}
+
+.soon-left-content button {
+    width: 25rem;
+    height: 7rem;
+    background-color: rgb(226, 200, 30);
+    border: none;
+    font-family: "Mulish", serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    animation: moveBannerLeft 1s 0.9s forwards;
+}
+
+
+.soon-right-content img {
+    width: 75%;
+    /* Make the image take up the available space */
+    height: auto;
+    /* Maintain aspect ratio */
+    cursor: pointer;
+    /* Makes the image clickable */
+    animation: moveBannerRight 1s 0s forwards;
+}
+
+
+
 @keyframes moveBanner {
     0% {
         transform: translateY(40rem) rotateY(-20deg);
@@ -200,6 +511,128 @@ html {
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
+}
+
+
+@keyframes moveBannerLeft {
+    0% {
+        transform: translateX(-40rem) rotateY(-20deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveBannerRight {
+    0% {
+        transform: translateX(40rem) rotateY(-20deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveBannerTop {
+    0% {
+        transform: translateY(-120rem) rotateY(-20deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* Sidebar and Hamburger Styles */
+
+
+
+.line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #fff;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.change .line {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.change .line-1 {
+    transform: rotate(45deg) translate(0.3rem, 0.8rem);
+}
+
+.change .line-2 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.change .line-3 {
+    transform: rotate(-45deg) translate(0.3rem, -0.8rem);
+}
+
+.hamburger-menu {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 6rem;
+    right: 5rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.change .hamburger-menu {
+    right: 30rem;
+}
+
+
+.hamburger-menu span {
+    position: absolute;
+    left: 5rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: rgb(226, 200, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.7s;
+}
+
+.change .hamburger-menu:hover span {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger-menu span::before {
+    content: "";
+    position: absolute;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid rgb(226, 200, 30);
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent;
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%);
 }
 
 .sidebar {
@@ -225,6 +658,7 @@ html {
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
+    padding-bottom: 60%;
 }
 
 .sidelogo-wrapper img {
@@ -244,11 +678,12 @@ html {
 
 .menu-item {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .menu-link {
     font-family: "Baloo Da 2", serif;
-    font-size: 4rem;
+    font-size: 2.7rem;
     color: #555;
     position: relative;
 }
@@ -258,7 +693,7 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    color: aquamarine;
+    color: rgb(226, 200, 30);
     width: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -292,9 +727,16 @@ html {
 }
 
 .social-media i:hover {
-    background-color: aquamarine;
+    background-color: rgb(226, 200, 30);
 }
 
+
+
+
+
+
+/*-----------------------------------------------*/
+/* books page */
 .about-us {
     width: 100%;
     background-color: whitesmoke;
@@ -321,78 +763,10 @@ html {
     width: 23rem;
     height: 0.3rem;
     margin-right: 2rem;
-    background-color: aquamarine;
+    background-color: rgb(226, 200, 30);
 }
 
-.services {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(6, 6rem);
-    row-gap: 4rem;
-}
 
-.service {
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-.service:nth-child(1) {
-    grid-column: 3 / 6;
-    grid-row: 1 / 3;
-}
-
-.service:nth-child(2) {
-    grid-column: 2 / 5;
-    grid-row: 4 / 5;
-}
-
-.service:nth-child(3) {
-    grid-column: 3 / 7;
-    grid-row: 7 / -1;
-}
-
-.service:nth-child(4) {
-    grid-column: 12 / 16;
-    grid-row: 0 / 4;
-}
-
-.service:nth-child(5) {
-    grid-column: 13 / 16;
-    grid-row: 4 / 5;
-}
-
-.service:nth-child(6) {
-    grid-column: 12 / 16;
-    grid-row: 7 / -1;
-}
-
-.service-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.service-header i {
-    font-size: 4rem;
-    color: #4b4b4b;
-    margin-right: 2rem;
-}
-
-.service-header h3 {
-    font-family: "Baloo Da 2", serif;
-    font-size: 2.6rem;
-    line-height: 2.6rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-}
-
-.service-text {
-    font-family: "Mulish", serif;
-    font-size: 2rem;
-    text-align: justify;
-}
 
 .about-us-img-wrapper {
     grid-column: 6 / 10;
@@ -465,36 +839,21 @@ html {
     visibility: visible;
 }
 
-.card-info h2 {
-    font-family: "Baloo Da 2", serif;
-    font-size: 3rem;
-    line-height: 3rem;
-    font-weight: 300;
-    color: #eee;
-}
 
-.card-info h3 {
-    font-family: "Mulish", serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: red;
-    margin-bottom: 1rem;
-}
 
-.card-info p {
-    font-family: "Baloo da 2", serif;
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    font-weight: 300;
-    color: white;
-    width: 80%;
-    margin-bottom: 0.5rem;
-}
 
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* Contact Us Styles */
 .contact {
     width: 100%;
     height: 100vh;
-    background-color: #272727;
+    background-color: #9b9b9b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -505,12 +864,14 @@ html {
     height: 75rem;
     display: flex;
     box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
+    animation: moveBannerTop 1.5s 0s forwards;
+    
 }
 
 .contact-left {
     width: 35%;
-    background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)),
-        url(images/wb.jpg) center no-repeat;
+    background: linear-gradient(rgba(198, 198, 198, 0), rgba(157, 157, 157, 0)),
+        url(images/yellowSketch3.webp) center no-repeat;
     background-size: cover;
 }
 
@@ -592,7 +953,7 @@ html {
 .submit-btn {
     width: 45rem;
     height: 5rem;
-    background-color: #c29525;
+    background-color: rgb(226, 200, 30);
     color: #fff;
     border: none;
     margin-top: 2rem;
@@ -606,6 +967,16 @@ html {
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
+
+
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* Footer Styles */
 .footer {
     width: 100%;
     height: 15rem;
@@ -636,13 +1007,14 @@ html {
     color: #a7a7a7;
 }
 
+/*button to scroll to top*/
 .scroll-btn {
     position: fixed;
     right: 5rem;
     bottom: 5rem;
     width: 4.5rem;
     height: 4.5rem;
-    background-color: aquamarine;
+    background-color: rgb(226, 200, 30);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -653,60 +1025,57 @@ html {
 
 }
 
-.boat {
-    width: 100%;
-    height: 100vh;
-    background-color: #272727;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------*/
+/* Media Queries */
+
+@media(max-width: 3500px) {
+
+    .header {
+        height: 130vh;
+    }
 }
 
-.shit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 7rem 0 2rem 0rem;
-}
+@media(max-width: 3000px) {
 
-.fuck {
-    font-family: "Mulish", serif;
-    font-size: 5rem;
-    font-weight: 300;
-    color: white;
-    margin-bottom: 6rem;
-    margin-right: 2rem;
-    text-align: center;
-}
-
-
-
-.damn {
-    width: 60%;
-    display: block;
-    margin: 0 auto;
+    .header {
+        height: 130vh;
+    }
 
 }
 
-.video {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
 
+@media(max-width: 2500px) {
+
+    .header {
+        height: 120vh;
+    }
 
 }
 
-.video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+@media(max-width: 2000px) {
 
+    .header {
+        height: 105vh;
+    }
 }
 
 @media(max-width: 1500px) {
+
+    .header {
+        height: 90vh;
+    }
+
     .about us img-wrapper {
         grid-row: 3 / -1;
     }
@@ -724,9 +1093,21 @@ html {
         width: 80%
     }
 
+
+
 }
 
 @media(max-width: 1400px) {
+
+    .nav-bar nav ul li a {
+        font-size: 2.5rem;
+        /* Smaller font size */
+    }
+
+    .header {
+        height: 80vh;
+    }
+
     .banner h1 {
         font-size: 6rem;
         line-height: 7rem;
@@ -772,6 +1153,11 @@ html {
 }
 
 @media (max-width: 1300px) {
+
+    .header {
+        height: 70vh;
+    }
+
     .team {
         padding-bottom: 5rem;
     }
@@ -800,14 +1186,46 @@ html {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
+
+    .left-content {
+        padding: 1rem;
+    }
+
+    .soon-left-content {
+        padding: 1rem;
+    }
+
+    .nav-bar {
+        padding: 1rem;
+    }
+
+    .nav-bar nav ul {
+        gap: 1px;
+    }
+
+    .nav-bar nav ul li {
+        padding: 0 5px;
+        /* Reduces the padding between items */
+    }
+
+    .nav-bar nav ul li a {
+        font-size: 1.8rem;
+        /* Smaller font size */
+    }
+
+
     .banner h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: 6rem;
     }
 
+    .header {
+        height: 70vh;
+    }
+
     .banner p {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .banner button {
@@ -867,12 +1285,23 @@ html {
         margin-top: 3rem;
     }
 
-    .damn {
-        width: 80%;
+    .blogs-wrapper {
+        grid-template-columns: repeat(2, 1fr);
     }
+
+
 }
 
-@media (max-width: 700px) {
+@media (max-width: 740px) {
+
+    .left-content {
+        padding: 1rem;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
     .banner h1 {
         font-size: 4rem;
         line-height: 5rem;
@@ -894,25 +1323,20 @@ html {
         width: 35rem;
     }
 
-    .damn {
-        width: 90%;
+
+    .header {
+        height: 70vh;
     }
 
-    .one {
-        margin-left: 2%;
-        margin-right: 3%;
-
-    }
-    
-    .two {
-
-        margin-left: 2%;
-    }
 }
 
 @media (max-width: 500px) {
     html {
         font-size: 45%;
+    }
+
+    .header {
+        height: 70vh;
     }
 
     .sidebar {
@@ -931,20 +1355,19 @@ html {
     .footer {
         height: 18rem;
     }
-    .shit {
-        padding: 7rem 0 0rem 0rem;
-    }
-    .damn {
-        width: 95%;
+
+    .blogs-wrapper {
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .boat {
-        width: 100%;
-        height: 60vh;
-    }
 }
 
 @media (max-width: 360px) {
+
+    .header {
+        height: 50vh;
+    }
+
     .two {
         display: flex;
     }
@@ -953,4 +1376,21 @@ html {
         top: 5rem;
     }
 
+}
+
+
+/* Optional: Add some responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .reviews {
+        flex-direction: column;
+        /* Stack the reviews vertically on small screens */
+        height: auto;
+        padding: 1rem;
+    }
+
+    .review {
+        width: 80%;
+        /* Make the reviews take up more space */
+        margin-bottom: 1rem;
+    }
 }
