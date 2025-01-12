@@ -1385,11 +1385,6 @@ header.blog-header {
 
 
 
-    .header {
-        height: 100vh;
-    }
-}
-
 @media (max-width: 360px) {
 
     .header {
