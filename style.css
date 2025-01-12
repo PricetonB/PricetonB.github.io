@@ -504,7 +504,7 @@ header.blog-header {
 
 @keyframes moveBanner {
     0% {
-        transform: translateY(40rem) rotateY(-20deg);
+        transform: translateY(80rem) rotateY(-20deg);
     }
 
     100% {
@@ -527,7 +527,7 @@ header.blog-header {
 
 @keyframes moveBannerRight {
     0% {
-        transform: translateX(40rem) rotateY(-20deg);
+        transform: translateX(100rem) rotateY(-20deg);
     }
 
     100% {
