@@ -796,7 +796,7 @@ header.blog-header {
 }
 
 .card {
-    width: 37rem;
+    width: fit-content;
     height: 55rem;
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 0.5rem;
@@ -1086,7 +1086,9 @@ header.blog-header {
     }
 
     .card {
-        width: 34rem;
+        width: fit-content;
+        height: 40rem;
+        margin-bottom: 0;
     }
 
     .contact-wrapper {
@@ -1168,13 +1170,13 @@ header.blog-header {
     }
 
     .cards-wrapper {
-        flex-direction: column;
+
         align-items: center;
         margin-top: 4rem;
     }
 
     .card {
-        margin-bottom: 8rem;
+        margin-bottom: 0;
     }
 
     .contact-wrapper {
@@ -1294,6 +1296,14 @@ header.blog-header {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 8rem;
+    }
 
 }
 
