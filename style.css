@@ -1038,6 +1038,10 @@ header.blog-header {
     margin-top: 5%;
 }
 
+#showcase-header {
+    background-color: #e5e2d3;
+}
+
 @media (max-width: 768px) {
     .showcase-box {
         flex-direction: column;
