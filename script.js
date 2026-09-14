@@ -1,31 +1,63 @@
-const menuBtn = document.getElementById("menuBtn");
-const mainNav = document.getElementById("mainNav");
-const form = document.getElementById("serviceForm");
-const formStatus = document.getElementById("formStatus");
-const year = document.getElementById("year");
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-links');
 
-year.textContent = new Date().getFullYear();
-
-menuBtn.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
+menuButton?.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
 });
 
-document.querySelectorAll("#mainNav a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
+document.querySelectorAll('.nav-links a').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
   });
 });
 
-form.addEventListener("submit", event => {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const form = document.getElementById('estimate-form');
+const formNote = document.getElementById('form-note');
+
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const data = new FormData(form);
-  const firstName = data.get("firstName") || "there";
 
-  formStatus.textContent =
-    `Thanks, ${firstName}. This demo form is working on the front end. Connect it to your email, CRM, Formspree, Netlify Forms, or your own backend to receive submissions.`;
+  const name = data.get('name') || '';
+  const phone = data.get('phone') || '';
+  const email = data.get('email') || '';
+  const service = data.get('service') || '';
+  const message = data.get('message') || '';
 
-  form.reset();
+  const subject = encodeURIComponent(`Estimate Request - ${service}`);
+
+  const body = encodeURIComponent(
+    `Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Service: ${service}
+
+Project Details:
+${message}`
+  );
+
+  formNote.textContent =
+    'Opening your email app with the estimate details...';
+
+  window.location.href =
+    `mailto:alexchanxela1224@gmail.com?subject=${subject}&body=${body}`;
 });
